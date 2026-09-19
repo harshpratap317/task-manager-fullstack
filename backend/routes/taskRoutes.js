@@ -13,10 +13,13 @@ router.get("/", async (req, res) => {
 
     res.json(tasks);
   } catch (error) {
-    res.status(500).json({
-      message: "Failed to fetch tasks",
-    });
-  }
+  console.log("FETCH TASK ERROR:", error);
+
+  res.status(500).json({
+    message: "Failed to fetch tasks",
+    error: error.message,
+  });
+}
 });
 
 // POST new task
@@ -29,10 +32,13 @@ router.post("/", async (req, res) => {
 
     res.status(201).json(newTask);
   } catch (error) {
-    res.status(500).json({
-      message: "Failed to create task",
-    });
-  }
+  console.log("CREATE TASK ERROR:", error);
+
+  res.status(500).json({
+    message: "Failed to create task",
+    error: error.message,
+  });
+}
 });
 
 // PUT update task

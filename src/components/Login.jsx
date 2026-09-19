@@ -13,8 +13,8 @@ function Login({ setIsLoggedIn }) {
 
     try {
       const url = isRegister
-        ? "http://localhost:5000/api/auth/register"
-        : "http://localhost:5000/api/auth/login";
+        ? `${import.meta.env.VITE_API_URL}/api/auth/register`
+        : `${import.meta.env.VITE_API_URL}/api/auth/login`;
 
       const body = isRegister
         ? {

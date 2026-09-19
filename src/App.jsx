@@ -29,7 +29,7 @@ function App() {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await fetch("http://localhost:5000/api/tasks", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,8 +59,7 @@ function App() {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/tasks/${id}`,
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks`,
         {
           method: "DELETE",
           headers: {
@@ -100,8 +99,7 @@ function App() {
     }
 
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/tasks/${editIndex}`,
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks`,
         {
           method: "PUT",
           headers: {
@@ -145,8 +143,7 @@ function App() {
     }
 
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/tasks/${id}`,
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks`,
         {
           method: "PUT",
           headers: {
@@ -184,7 +181,7 @@ function App() {
 
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/api/tasks", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/tasks`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
