@@ -59,7 +59,7 @@ function App() {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks`,
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -99,7 +99,7 @@ function App() {
     }
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks`,
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks/${editIndex}`,
         {
           method: "PUT",
           headers: {
@@ -143,7 +143,7 @@ function App() {
     }
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks`,
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks/${id}`,
         {
           method: "PUT",
           headers: {
